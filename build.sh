@@ -7,7 +7,7 @@ curl http://tools.cloud.school.thoughtworks.cn/ | sudo sh -
 
 TAG=$SERVICE-$BRANCH_NAME-$BUILD_NUMBER
 
-./gradlew build
+./gradlew build -x test
 
 sudo docker build -t $TEAM:$TAG .
 sudo docker tag $TEAM:$TAG $ECR_HOST/$TEAM:$TAG
